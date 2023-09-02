@@ -1,5 +1,6 @@
 package com.example.tictactoe;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -117,7 +118,7 @@ public class Board {
                     label.setText("Player 1 wins!");
                     p1Sc ++;
                     p1Score.setText(String.valueOf(p1Sc));
-                    disableButtons();
+                    disableEnableButtons(true);
                 return;
             } else if (list.contains("false" + position1) &&
                     list.contains("false" + position2) &&
@@ -125,7 +126,7 @@ public class Board {
                     label.setText("Player 2 wins!");
                     p2Sc ++;
                     p2Score.setText(String.valueOf(p2Sc));
-                    disableButtons();
+                    disableEnableButtons(true);
                 return;
             }
         }
@@ -133,21 +134,46 @@ public class Board {
             label.setText("It's a draw!");
         }
     }
-
     public void restartClick(){
+        resetButtons();
+        list.clear();
+        p1Sc = 0;
+        p1Score.setText(String.valueOf(p1Sc));
+        p1Score.setText(String.valueOf(p2Sc));
+        label.setText("");
+    }
+    public void keepPlayClick(){
+        list.clear();
+        resetButtons();
+        label.setText("");
+    }
+    public void exitClick(){
+        Platform.exit();
+    }
+    public void disableEnableButtons(boolean value){
+        a1.setDisable(value);
+        a2.setDisable(value);
+        a3.setDisable(value);
+        b1.setDisable(value);
+        b2.setDisable(value);
+        b3.setDisable(value);
+        c1.setDisable(value);
+        c2.setDisable(value);
+        c3.setDisable(value);
+    }
+   public void resetButtons(){
+       disableEnableButtons(false);
+       a1.setGraphic(null);
+       a2.setGraphic(null);
+       a3.setGraphic(null);
+       b1.setGraphic(null);
+       b2.setGraphic(null);
+       b3.setGraphic(null);
+       c1.setGraphic(null);
+       c2.setGraphic(null);
+       c3.setGraphic(null);
+   }
 
 
-    }
-    public void disableButtons(){
-        a1.setDisable(true);
-        a2.setDisable(true);
-        a3.setDisable(true);
-        b1.setDisable(true);
-        b2.setDisable(true);
-        b3.setDisable(true);
-        c1.setDisable(true);
-        c2.setDisable(true);
-        c3.setDisable(true);
-    }
 
 }

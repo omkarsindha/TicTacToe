@@ -33,14 +33,14 @@
             <Button fx:id="c3" mnemonicParsing="false" prefHeight="81.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button fx:id="restart" layoutX="274.0" layoutY="336.0" mnemonicParsing="false" text="Restart" />
+      <Button layoutX="274.0" layoutY="336.0" mnemonicParsing="false" onAction="#restartClick" text="Restart" />
       <Label fx:id="label" layoutX="151.0" layoutY="24.0" prefWidth="110.0">
          <font>
             <Font size="34.0" />
          </font>
       </Label>
-      <Button layoutX="151.0" layoutY="336.0" mnemonicParsing="false" text="Keep Playing" />
-      <Button layoutX="373.0" layoutY="336.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" text="Exit" />
+      <Button layoutX="151.0" layoutY="336.0" mnemonicParsing="false" onAction="#keepPlayClick" text="Keep Playing" />
+      <Button layoutX="373.0" layoutY="336.0" mnemonicParsing="false" onAction="#exitClick" prefHeight="26.0" prefWidth="54.0" text="Exit" />
       <Label layoutX="33.0" layoutY="120.0" text="Player 1">
          <font>
             <Font name="Arial" size="21.0" />
