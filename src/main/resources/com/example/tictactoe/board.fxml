@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.Board">
+   <children>
+      <GridPane layoutX="151.0" layoutY="86.0" prefHeight="226.0" prefWidth="300.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="a1" mnemonicParsing="false" prefHeight="79.0" prefWidth="100.0" />
+            <Button fx:id="a2" mnemonicParsing="false" prefHeight="90.0" prefWidth="100.0" GridPane.columnIndex="1" />
+            <Button fx:id="a3" mnemonicParsing="false" prefHeight="96.0" prefWidth="100.0" GridPane.columnIndex="2" />
+            <Button fx:id="b1" mnemonicParsing="false" prefHeight="132.0" prefWidth="100.0" GridPane.rowIndex="1" />
+            <Button fx:id="b2" mnemonicParsing="false" prefHeight="90.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="b3" mnemonicParsing="false" prefHeight="103.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="c1" mnemonicParsing="false" prefHeight="94.0" prefWidth="100.0" GridPane.rowIndex="2" />
+            <Button fx:id="c2" mnemonicParsing="false" prefHeight="101.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="c3" mnemonicParsing="false" prefHeight="81.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Button fx:id="restart" layoutX="274.0" layoutY="336.0" mnemonicParsing="false" text="Restart" />
+      <Label fx:id="label" layoutX="151.0" layoutY="24.0" prefWidth="110.0">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <Button layoutX="151.0" layoutY="336.0" mnemonicParsing="false" text="Keep Playing" />
+      <Button layoutX="373.0" layoutY="336.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" text="Exit" />
+      <Label layoutX="33.0" layoutY="120.0" text="Player 1">
+         <font>
+            <Font name="Arial" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="489.0" layoutY="120.0" text="Player 2">
+         <font>
+            <Font name="Arial" size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="p1Score" layoutX="62.0" layoutY="154.0" text="0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="p2Score" layoutX="518.0" layoutY="154.0" text="0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
