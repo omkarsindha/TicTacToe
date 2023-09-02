@@ -41,6 +41,12 @@ public class Board {
     private Label label;
 
     @FXML
+    private Label p1Score;
+    private int p1Sc = 0;
+    @FXML
+    private Label p2Score;
+    private int p2Sc = 0;
+    @FXML
     private Button restart;
 
     ArrayList<String> list = new ArrayList<>();
@@ -59,6 +65,16 @@ public class Board {
         c1.setOnAction(event -> onChoose(c1));
         c2.setOnAction(event -> onChoose(c2));
         c3.setOnAction(event -> onChoose(c3));
+        a1.setStyle("-fx-opacity: 1;");
+        a2.setStyle("-fx-opacity: 1;");
+        a3.setStyle("-fx-opacity: 1;");
+        b1.setStyle("-fx-opacity: 1;");
+        b2.setStyle("-fx-opacity: 1;");
+        b3.setStyle("-fx-opacity: 1;");
+        c1.setStyle("-fx-opacity: 1;");
+        c2.setStyle("-fx-opacity: 1;");
+        c3.setStyle("-fx-opacity: 1;");
+
     }
 
     public void onChoose(Button button){
@@ -98,12 +114,18 @@ public class Board {
             if (list.contains("true" + position1) &&
                     list.contains("true" + position2) &&
                     list.contains("true" + position3)) {
-                    label.setText("Player X wins!");
+                    label.setText("Player 1 wins!");
+                    p1Sc ++;
+                    p1Score.setText(String.valueOf(p1Sc));
+                    disableButtons();
                 return;
             } else if (list.contains("false" + position1) &&
                     list.contains("false" + position2) &&
                     list.contains("false" + position3)) {
-                     label.setText("Player O wins!");
+                    label.setText("Player 2 wins!");
+                    p2Sc ++;
+                    p2Score.setText(String.valueOf(p2Sc));
+                    disableButtons();
                 return;
             }
         }
@@ -115,6 +137,17 @@ public class Board {
     public void restartClick(){
 
 
+    }
+    public void disableButtons(){
+        a1.setDisable(true);
+        a2.setDisable(true);
+        a3.setDisable(true);
+        b1.setDisable(true);
+        b2.setDisable(true);
+        b3.setDisable(true);
+        c1.setDisable(true);
+        c2.setDisable(true);
+        c3.setDisable(true);
     }
 
 }
